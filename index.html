@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transformer Chatbot Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <section class="panel" aria-label="Chatbot">
+      <header class="topbar">
+        <div class="avatar" aria-hidden="true">AI</div>
+        <div>
+          <p class="eyebrow">PYTHON · FLASK · REST API</p>
+          <h1>Chatbot Demo</h1>
+          <p class="status"><span class="dot"></span> Demo engine online</p>
+        </div>
+      </header>
+
+      <div class="notice">
+        This portfolio demo uses sample response logic. It does not yet run a trained transformer model.
+      </div>
+
+      <section id="messages" class="messages" aria-live="polite" aria-label="Conversation">
+        <div class="message bot">
+          <span class="speaker">BOT</span>
+          <p>Hi! I'm a demo chatbot. Say hello, ask who I am, or type <strong>help</strong> to get started.</p>
+        </div>
+      </section>
+
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="message-input">Your message</label>
+        <input id="message-input" name="message" maxlength="2000" autocomplete="off"
+               placeholder="Write a message…" required>
+        <button id="send-button" type="submit">Send <span aria-hidden="true">↗</span></button>
+      </form>
+      <footer>Built as a learning project · No API key required</footer>
+    </section>
+    <p class="page-note">A simple full-stack starter project for your developer portfolio.</p>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
